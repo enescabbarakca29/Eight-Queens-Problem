@@ -7,25 +7,25 @@
 int board[N];    // board[col] = row
 int solutionCount = 0;
 
-// Bu fonksiyon şu ana kadar yerleştirilmiş vezirlerle çakışma var mı diye bakar
+// Bu fonksiyon Ã¾u ana kadar yerleÃ¾tirilmiÃ¾ vezirlerle Ã§akÃ½Ã¾ma var mÃ½ diye bakar
 int isSafe(int col, int row) {
     for (int prevCol = 0; prevCol < col; prevCol++) {
         int prevRow = board[prevCol];
 
-        // 1) Aynı satır?
+        // 1) AynÃ½ satÃ½r?
         if (prevRow == row)
             return 0;
 
-        // 2) Aynı çapraz? |row - prevRow| == |col - prevCol|
+        // 2) AynÃ½ Ã§apraz? |row - prevRow| == |col - prevCol|
         if (abs(prevRow - row) == abs(prevCol - col))
             return 0;
     }
-    return 1; // sorun yoksa güvenli
+    return 1; // sorun yoksa gÃ¼venli
 }
 
-// Tahtayı yazdır (görsel olarak)
+// TahtayÃ½ yazdÃ½r (gÃ¶rsel olarak)
 void printBoard() {
-    printf("Çözüm %d:\n", ++solutionCount);
+    printf("Ã‡Ã¶zÃ¼m %d:\n", ++solutionCount);
     for (int row = 0; row < N; row++) {
         for (int col = 0; col < N; col++) {
             if (board[col] == row)
@@ -38,20 +38,20 @@ void printBoard() {
     printf("\n");
 }
 
-// Backtracking fonksiyonu: her sütuna bir vezir koymayı dener
+// Backtracking fonksiyonu: her sÃ¼tuna bir vezir koymayÃ½ dener
 void solve(int col) {
-    // Tüm sütunlara yerleştirdiysek çözüm bulduk
+    // TÃ¼m sÃ¼tunlara yerleÃ¾tirdiysek Ã§Ã¶zÃ¼m bulduk
     if (col == N) {
         printBoard();
         return;
     }
 
-    // Bu sütun için tüm satırları dene
+    // Bu sÃ¼tun iÃ§in tÃ¼m satÃ½rlarÃ½ dene
     for (int row = 0; row < N; row++) {
         if (isSafe(col, row)) {
             board[col] = row;   // veziri koy
-            solve(col + 1);     // sonraki sütuna geç
-            // backtracking: başka satırları denemek için geri dön
+            solve(col + 1);     // sonraki sÃ¼tuna geÃ§
+            // backtracking: baÃ¾ka satÃ½rlarÃ½ denemek iÃ§in geri dÃ¶n
         }
     }
 }
@@ -59,7 +59,7 @@ void solve(int col) {
 int main() {
     solve(0);
 
-    printf("Toplam çözüm sayısı: %d\n", solutionCount);
+    printf("Toplam Ã§Ã¶zÃ¼m sayÃ½sÃ½: %d\n", solutionCount);
     return 0;
 }
 
