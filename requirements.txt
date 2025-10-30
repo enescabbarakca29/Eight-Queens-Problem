@@ -1,0 +1,15 @@
+# 8 Vezir Problemi - C Programı için Gereksinimler
+
+# Derleyici:
+gcc (MinGW, Clang veya Linux GCC sürümü 9.0+ önerilir)
+
+# Geliştirme Ortamı:
+Visual Studio Code (önerilen)
+C/C++ uzantısı (ms-vscode.cpptools)
+
+# İşletim Sistemi:
+Windows 10/11 veya Linux (Ubuntu, Fedora vb.)
+
+# Çalıştırma:
+gcc eight_queens.c -o eight_queens
+./eight_queens
