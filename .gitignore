@@ -1,0 +1,24 @@
+# Derlenmiş dosyalar
+*.exe
+*.out
+*.o
+*.obj
+
+# VS Code ayarları
+.vscode/
+*.code-workspace
+
+# Geçici dosyalar
+*.log
+*.tmp
+*.bak
+*~
+
+# macOS / Windows özel dosyalar
+.DS_Store
+Thumbs.db
+
+# build veya debug klasörleri
+build/
+debug/
+bin/
